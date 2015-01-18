@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text="$0.00"
-        
+        println("viewDidload")
         
     }
 
@@ -39,7 +39,6 @@ class ViewController: UIViewController {
         var tipPercentages = [0.18,0.2,0.22]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
-        var uno = 1
         var billAmount = (billField.text as NSString).floatValue
         var tip = billAmount * Float(tipPercentage)
         var total = billAmount + tip
