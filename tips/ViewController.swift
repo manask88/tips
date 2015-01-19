@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -33,10 +32,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+//******shouls probably edit when click on save, not as sson at editing is done
     @IBAction func onEditingChanged(sender: AnyObject) {
-        
-        var tipPercentages = [0.18,0.2,0.22]
+       
+        //*this should probably go on viewDidLoad, but for that I will nee dto have some global variables
+        var defaults = NSUserDefaults.standardUserDefaults()
+    
+        var tipOne = defaults.integerForKey("tipOne")
+        var tipTwo = defaults.integerForKey("tipTwo")
+        var tipThree = defaults.integerForKey("tipThree")
+
+        var tipPercentages = [tipOne,tipTwo,tipThree]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = (billField.text as NSString).floatValue
@@ -49,7 +55,7 @@ class ViewController: UIViewController {
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
-        
+        println("main screen")
     }
     
     

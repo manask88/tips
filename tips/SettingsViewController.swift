@@ -10,6 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var tipOne: UITextField!
+    
+    @IBOutlet weak var tipTwo: UITextField!
+    
+    @IBOutlet weak var tipThree: UITextField!
+    @IBOutlet var viewSettings: UIView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         println("test")
@@ -21,7 +29,19 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onTipOneChange(sender: AnyObject) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
+        defaults.synchronize()
+        
+    }
+ 
+ 
 
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+
+    }
     /*
     // MARK: - Navigation
 
