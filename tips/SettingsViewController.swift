@@ -20,7 +20,19 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("test")
+        
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        tipOne.text = String(defaults.integerForKey("tipOne"))
+        tipTwo.text = String(defaults.integerForKey("tipTwo"))
+        tipThree.text = String(defaults.integerForKey("tipThree"))
+
+        //        tipTwo = defaults.integerForKey("tipTwo")
+//        tipThree = defaults.integerForKey("tipThree")
+       
+        
+        
         // Do any additional setup after loading the view.
     }
 

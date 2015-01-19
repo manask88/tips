@@ -14,13 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
 
-    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var totalOneLabel: UILabel!
+    @IBOutlet weak var totalTwoLabel: UILabel!
+    @IBOutlet weak var totalThreeLabel: UILabel!
+    @IBOutlet weak var totalFourLabel: UILabel!
     
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        println("view will appear")
+        
+        
         var defaults = NSUserDefaults.standardUserDefaults()
         
         var tipOne = defaults.integerForKey("tipOne")
@@ -35,8 +39,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
-        totalLabel.text="$0.00"
-        println("viewDidload")
+        totalOneLabel.text="$0.00"
         
         
         var currentDate = NSDate()
@@ -67,7 +70,11 @@ class ViewController: UIViewController {
         var total = billAmount + tip
   
         tipLabel.text=String(format:"$%.2f",tip)
-        totalLabel.text=String(format:"$%.2f",total)
+        totalOneLabel.text=String(format:"$%.2f",total)
+        totalTwoLabel.text=String(format:"$%.2f",total/2)
+        totalThreeLabel.text=String(format:"$%.2f",total/3)
+        totalFourLabel.text=String(format:"$%.2f",total/4)
+
     }
 
     @IBAction func onTap(sender: AnyObject) {
