@@ -82,13 +82,12 @@
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="fQ9-l2-Nmj">
                                             <connections>
                                                 <action selector="onCancel:" destination="v3E-3n-FH1" id="mcf-jd-J4d"/>
-                                                <segue destination="vXZ-lx-hvc" kind="modal" id="7Nj-hH-duf"/>
+                                                <segue destination="vXZ-lx-hvc" kind="modal" identifier="mainScreen" modalTransitionStyle="crossDissolve" id="7Nj-hH-duf"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="cgp-h9-bWU">
                                             <connections>
-                                                <action selector="onSave:" destination="v3E-3n-FH1" id="kOB-id-Vgb"/>
-                                                <segue destination="vXZ-lx-hvc" kind="modal" id="CX3-sL-9pM"/>
+                                                <action selector="onDone:" destination="v3E-3n-FH1" id="mHo-7v-O2C"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -156,19 +155,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVc-lr-ztS">
-                                <rect key="frame" x="148" y="115" width="17" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" id="Y6U-GE-6On">
-                                <rect key="frame" x="160" y="111" width="136" height="30"/>
+                                <rect key="frame" x="208" y="111" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="onBillAmountChange:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="9gl-eo-acZ"/>
                                     <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="21s-z2-7Me"/>
                                 </connections>
                             </textField>
@@ -260,6 +253,13 @@
                                     <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="AnL-nh-fCA"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVc-lr-ztS">
+                                <rect key="frame" x="195" y="114" width="17" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -294,7 +294,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="7Nj-hH-duf"/>
-    </inferredMetricsTieBreakers>
 </document>

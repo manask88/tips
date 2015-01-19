@@ -45,6 +45,11 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func onSave(sender: AnyObject) {
+    
+    }
+    
+
+    @IBAction func onDone(sender: AnyObject) {
         var defaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
@@ -52,11 +57,9 @@ class SettingsViewController: UIViewController {
         defaults.setInteger((tipThree.text as NSString).integerValue, forKey: "tipThree")
         defaults.synchronize()
         
-        
+        performSegueWithIdentifier("mainScreen", sender: self)
         println("saving")
     }
-    
-
     
    
     

@@ -30,6 +30,9 @@ class ViewController: UIViewController {
         var tipOne = defaults.integerForKey("tipOne")
         var tipTwo = defaults.integerForKey("tipTwo")
         var tipThree = defaults.integerForKey("tipThree")
+        var billAmount=defaults.integerForKey("billAmount")
+        
+        billField.text=String(billAmount)
         tipControl.setTitle(String(tipOne)+"%", forSegmentAtIndex: 0)
         tipControl.setTitle(String(tipTwo)+"%", forSegmentAtIndex: 1)
         tipControl.setTitle(String(tipThree)+"%", forSegmentAtIndex: 2)
@@ -81,6 +84,12 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func onBillAmountChange(sender: AnyObject) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setInteger((billField.text as NSString).integerValue, forKey: "billAmount")
+        
+    }
     
 }
 
