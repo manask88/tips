@@ -36,17 +36,17 @@ class ViewController: UIViewController {
         tipControl.setTitle(String(tipOne)+"%", forSegmentAtIndex: 0)
         tipControl.setTitle(String(tipTwo)+"%", forSegmentAtIndex: 1)
         tipControl.setTitle(String(tipThree)+"%", forSegmentAtIndex: 2)
+        
+        
+        calculateTip()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
-        totalOneLabel.text="$0.00"
         
         
         var currentDate = NSDate()
-        println(currentDate)
         
     }
 
@@ -54,30 +54,39 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//******shouls probably edit when click on save, not as sson at editing is done
-    @IBAction func onEditingChanged(sender: AnyObject) {
-      
-        //*this should probably go on viewDidLoad, but for that I will nee dto have some global variables
-        var defaults = NSUserDefaults.standardUserDefaults()
     
+    
+    func sayHello(personName: String) -> String {
+        let greeting = "Hello, " + personName + "!"
+        return greeting
+    }
+
+    
+    
+    func calculateTip(){
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
         var tipOne = defaults.integerForKey("tipOne")
         var tipTwo = defaults.integerForKey("tipTwo")
         var tipThree = defaults.integerForKey("tipThree")
-
+        
         var tipPercentages = [tipOne,tipTwo,tipThree]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = (billField.text as NSString).floatValue
         var tip = billAmount  * Float(tipPercentage)*0.01
-
+        
         var total = billAmount + tip
-  
+        
         tipLabel.text=String(format:"$%.2f",tip)
         totalOneLabel.text=String(format:"$%.2f",total)
         totalTwoLabel.text=String(format:"$%.2f",total/2)
         totalThreeLabel.text=String(format:"$%.2f",total/3)
         totalFourLabel.text=String(format:"$%.2f",total/4)
-
+    }
+    
+    @IBAction func onEditingChanged(sender: AnyObject) {
+          calculateTip()
     }
 
     @IBAction func onTap(sender: AnyObject) {
