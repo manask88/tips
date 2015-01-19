@@ -61,6 +61,7 @@
 		6488A15A1A6C44F7000B4C80 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				64FB3CA31A6A235F005718BE /* ViewController.swift */,
 				6488A1611A6C504C000B4C80 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
@@ -89,7 +90,6 @@
 			children = (
 				6488A15A1A6C44F7000B4C80 /* ViewControllers */,
 				64FB3CA11A6A235F005718BE /* AppDelegate.swift */,
-				64FB3CA31A6A235F005718BE /* ViewController.swift */,
 				64FB3CA51A6A235F005718BE /* Main.storyboard */,
 				64FB3CA81A6A235F005718BE /* Images.xcassets */,
 				64FB3CAA1A6A235F005718BE /* LaunchScreen.xib */,

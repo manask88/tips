@@ -26,6 +26,17 @@ class ViewController: UIViewController {
         totalLabel.text="$0.00"
         println("viewDidload")
         
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        var tipOne = defaults.integerForKey("tipOne")
+        var tipTwo = defaults.integerForKey("tipTwo")
+        var tipThree = defaults.integerForKey("tipThree")
+        tipControl.setTitle(String(tipOne), forSegmentAtIndex: 0)
+        tipControl.setTitle(String(tipTwo), forSegmentAtIndex: 1)
+        tipControl.setTitle(String(tipThree), forSegmentAtIndex: 2)
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +45,7 @@ class ViewController: UIViewController {
     }
 //******shouls probably edit when click on save, not as sson at editing is done
     @IBAction func onEditingChanged(sender: AnyObject) {
-       
+      
         //*this should probably go on viewDidLoad, but for that I will nee dto have some global variables
         var defaults = NSUserDefaults.standardUserDefaults()
     
@@ -46,7 +57,7 @@ class ViewController: UIViewController {
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = (billField.text as NSString).floatValue
-        var tip = billAmount * Float(tipPercentage)
+        var tip = billAmount * Float(tipPercentage/100)
         var total = billAmount + tip
   
         tipLabel.text=String(format:"$%.2f",tip)

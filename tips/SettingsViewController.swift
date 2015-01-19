@@ -30,21 +30,40 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func onTipOneChange(sender: AnyObject) {
-        var defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
-        defaults.synchronize()
+       
         
     }
  
+    @IBAction func onTipTwoChange(sender: AnyObject) {
+    }
  
+    @IBAction func onTipThreeChange(sender: AnyObject) {
+    }
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
 
     }
+    
+    
+    
+    @IBAction func onClickSaveButton(sender: AnyObject) {
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
+        defaults.setInteger((tipTwo.text as NSString).integerValue, forKey: "tipTwo")
+        defaults.setInteger((tipThree.text as NSString).integerValue, forKey: "tipThree")
+        defaults.synchronize()
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
+    @IBAction func onClickSaveButton(sender: AnyObject) {
+    }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
