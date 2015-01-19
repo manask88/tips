@@ -28,10 +28,6 @@ class SettingsViewController: UIViewController {
         tipTwo.text = String(defaults.integerForKey("tipTwo"))
         tipThree.text = String(defaults.integerForKey("tipThree"))
 
-        //        tipTwo = defaults.integerForKey("tipTwo")
-//        tipThree = defaults.integerForKey("tipThree")
-       
-        
         
         // Do any additional setup after loading the view.
     }
@@ -41,25 +37,14 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onTipOneChange(sender: AnyObject) {
-       
-        
-    }
- 
-    @IBAction func onTipTwoChange(sender: AnyObject) {
-    }
- 
-    @IBAction func onTipThreeChange(sender: AnyObject) {
-    }
+
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
 
     }
     
-    
-
-    @IBAction func onClickSave(sender: AnyObject) {
+    @IBAction func onSave(sender: AnyObject) {
         var defaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
@@ -71,6 +56,9 @@ class SettingsViewController: UIViewController {
         println("saving")
     }
     
+
+    
+   
     
  
     /*
