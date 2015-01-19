@@ -39,8 +39,8 @@ class ViewController: UIViewController {
         println("viewDidload")
         
         
-      
-
+        var currentDate = NSDate()
+        println(currentDate)
         
     }
 
