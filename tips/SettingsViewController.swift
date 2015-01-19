@@ -46,9 +46,8 @@ class SettingsViewController: UIViewController {
     }
     
     
-    
-    @IBAction func onClickSaveButton(sender: AnyObject) {
-        
+
+    @IBAction func onClickSave(sender: AnyObject) {
         var defaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
@@ -56,14 +55,16 @@ class SettingsViewController: UIViewController {
         defaults.setInteger((tipThree.text as NSString).integerValue, forKey: "tipThree")
         defaults.synchronize()
         
+        
+        println("saving")
     }
     
     
+ 
     /*
     // MARK: - Navigation
 
-    @IBAction func onClickSaveButton(sender: AnyObject) {
-    }
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.

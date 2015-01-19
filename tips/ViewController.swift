@@ -18,15 +18,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipControl: UISegmentedControl!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
-        totalLabel.text="$0.00"
-        println("viewDidload")
-        
-        
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println("view will appear")
         var defaults = NSUserDefaults.standardUserDefaults()
         
         var tipOne = defaults.integerForKey("tipOne")
@@ -35,6 +29,17 @@ class ViewController: UIViewController {
         tipControl.setTitle(String(tipOne), forSegmentAtIndex: 0)
         tipControl.setTitle(String(tipTwo), forSegmentAtIndex: 1)
         tipControl.setTitle(String(tipThree), forSegmentAtIndex: 2)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        tipLabel.text = "$0.00"
+        totalLabel.text="$0.00"
+        println("viewDidload")
+        
+        
+      
 
         
     }
@@ -57,7 +62,8 @@ class ViewController: UIViewController {
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = (billField.text as NSString).floatValue
-        var tip = billAmount * Float(tipPercentage/100)
+        var tip = billAmount  * Float(tipPercentage)*0.01
+
         var total = billAmount + tip
   
         tipLabel.text=String(format:"$%.2f",tip)
@@ -66,7 +72,6 @@ class ViewController: UIViewController {
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
-        println("main screen")
     }
     
     
