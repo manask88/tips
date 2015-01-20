@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6488A1621A6C504C000B4C80 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488A1611A6C504C000B4C80 /* SettingsViewController.swift */; };
 		649973661A6DEB9A000983EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649973651A6DEB9A000983EC /* BaseViewController.swift */; };
+		649973681A6E2CFA000983EC /* TryBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649973671A6E2CFA000983EC /* TryBool.swift */; };
 		64FB3CA21A6A235F005718BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB3CA11A6A235F005718BE /* AppDelegate.swift */; };
 		64FB3CA41A6A235F005718BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB3CA31A6A235F005718BE /* ViewController.swift */; };
 		64FB3CA71A6A235F005718BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FB3CA51A6A235F005718BE /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		6488A1611A6C504C000B4C80 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		649973651A6DEB9A000983EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		649973671A6E2CFA000983EC /* TryBool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryBool.swift; sourceTree = "<group>"; };
 		64FB3C9C1A6A235F005718BE /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FB3CA01A6A235F005718BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64FB3CA11A6A235F005718BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				64FB3CA81A6A235F005718BE /* Images.xcassets */,
 				64FB3CAA1A6A235F005718BE /* LaunchScreen.xib */,
 				64FB3C9F1A6A235F005718BE /* Supporting Files */,
+				649973671A6E2CFA000983EC /* TryBool.swift */,
 			);
 			path = tips;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64FB3CA41A6A235F005718BE /* ViewController.swift in Sources */,
+				649973681A6E2CFA000983EC /* TryBool.swift in Sources */,
 				649973661A6DEB9A000983EC /* BaseViewController.swift in Sources */,
 				64FB3CA21A6A235F005718BE /* AppDelegate.swift in Sources */,
 				6488A1621A6C504C000B4C80 /* SettingsViewController.swift in Sources */,

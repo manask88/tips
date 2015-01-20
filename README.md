@@ -1,14 +1,19 @@
 
 This is an iOS (Swift) demo application to apply to CodePath
-Time spent: 1 hours spent in tutorial
+Time spent: 1 hours spent in tutorial, 8 hours developing all the required and one optional feature (time was also used refactoring code)
 
 Completed user stories:
 
-Required: User can view a list of latest box office movies including title, cast and tomatoes rating
-Required: User can click on a movie in the list to bring up a details page with additional information such as synopsis
-Optional: Placeholder image is used for movie posters loaded in from the network
+Required: Adding Tip Calculator Settings Page
+Required: Creating a Settings View Controller
+Required: Designing the Settings Page
+Required: Loading and Saving
+Required: View Controller Lifecycle
+
+Optional: Remember the bill amount across app restarts. After an extended period of time, clear the state. This is a UI trick that Apple uses with the Spotlight app. If you return there a minute later, it will show your most recent search. if you return 10 minutes later, it defaults to blank. To implement this, plug into the application lifecycle and track time using NSDate
+
 Notes:
 
-Spent some time making the UI work across multiple phone resolutions by playing around with the RelativeLayout.
+I spent some time improving the design, similarly to the example given in the optional section. I spent some time refactoring the code to make it DRY. I used tuples. I used inheritance and created functions.
 
 Walkthrough of all user stories:

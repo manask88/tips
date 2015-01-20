@@ -24,19 +24,26 @@ class ViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var oldDate = defaults.objectForKey("oldDate") as NSDate
-        
-        if (Int(oldDate.timeIntervalSinceNow)<delayBeforeErase)
-        {
-            billField.text="0"
-        }
-        else
-        {
-            var billAmount=defaults.integerForKey("billAmount")
-            billField.text=String(billAmount)
+
+        var oldDate:NSDate! = (NSUserDefaults.standardUserDefaults().objectForKey("oldDate")) as?  NSDate
+
+        if ((oldDate) != nil) {
+            
+            var newDate=oldDate
+            
+            if (Int(newDate.timeIntervalSinceNow)<delayBeforeErase)
+            {
+                billField.text="0"
+            }
+            else
+            {
+                var billAmount=defaults.integerForKey("billAmount")
+                billField.text=String(billAmount)
+                
+            }
 
         }
+        
     }
 
     override func viewWillAppear(animated: Bool) {

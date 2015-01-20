@@ -50,12 +50,12 @@
                   symbolName = "tips.ViewController.__deallocating_deinit"
                   moduleName = "tips"
                   urlString = "file:///Users/manuel/Desktop/tips/tips/ViewController.swift"
-                  timestampString = "443412038.286492"
+                  timestampString = "443430250.587305"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -64,12 +64,12 @@
                   symbolName = "@objc tips.ViewController.__ivar_destroyer"
                   moduleName = "tips"
                   urlString = "file:///Users/manuel/Desktop/tips/tips/ViewController.swift"
-                  timestampString = "443412038.286707"
+                  timestampString = "443430250.587466"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
