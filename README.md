@@ -21,7 +21,6 @@ Walkthrough of all user stories:
 
 
 ![alt tag](https://github.com/manask88/tips/blob/master/Screenshot%202015-01-19%2023.27.21.png)
-
 ![alt tag](https://github.com/manask88/tips/blob/master/Screenshot%202015-01-19%2023.27.27.png)
 ![alt tag](https://github.com/manask88/tips/blob/master/Screenshot%202015-01-19%2023.27.33.png)
 ![alt tag](https://github.com/manask88/tips/blob/master/Screenshot%202015-01-19%2023.27.44.png)
