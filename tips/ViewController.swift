@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipControl: UISegmentedControl!
     
+    
+    var defaults: NSUserDefaults!
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
