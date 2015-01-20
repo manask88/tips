@@ -17,12 +17,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tipThree: UITextField!
     @IBOutlet var viewSettings: UIView!
 
-    
+    var defaults: NSUserDefaults!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults = NSUserDefaults.standardUserDefaults()
         
         tipOne.text = String(defaults.integerForKey("tipOne"))
         tipTwo.text = String(defaults.integerForKey("tipTwo"))
@@ -50,7 +50,6 @@ class SettingsViewController: UIViewController {
     
 
     @IBAction func onDone(sender: AnyObject) {
-        var defaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
         defaults.setInteger((tipTwo.text as NSString).integerValue, forKey: "tipTwo")

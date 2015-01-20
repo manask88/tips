@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    let delayBeforeErase=(-6)
-    
+    let delayBeforeErase=(-600)
     
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
@@ -26,67 +25,56 @@ class ViewController: UIViewController {
     
     
     var defaults: NSUserDefaults!
-    
-    
-    
+   
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        println("viewWillAppear")
+      
+        var tipValues=getTipPredefinedValues()
         
+        tipControl.setTitle(String(tipValues.0)+"%", forSegmentAtIndex: 0)
+        tipControl.setTitle(String(tipValues.1)+"%", forSegmentAtIndex: 1)
+        tipControl.setTitle(String(tipValues.2)+"%", forSegmentAtIndex: 2)
         
-        var defaults = NSUserDefaults.standardUserDefaults()
+        calculateTip()
         
+    }
+    
+    func getTipPredefinedValues() -> (tipOne:Int, tipTwo:Int, tipThree:Int) {
         var tipOne = defaults.integerForKey("tipOne")
         var tipTwo = defaults.integerForKey("tipTwo")
         var tipThree = defaults.integerForKey("tipThree")
-        var billAmount=defaults.integerForKey("billAmount")
+
+        return (tipOne, tipTwo,tipThree)
+    }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        billField.text=String(billAmount)
-        tipControl.setTitle(String(tipOne)+"%", forSegmentAtIndex: 0)
-        tipControl.setTitle(String(tipTwo)+"%", forSegmentAtIndex: 1)
-        tipControl.setTitle(String(tipThree)+"%", forSegmentAtIndex: 2)
-        
-        
+        println("viewDidLoad")
+
+        defaults = NSUserDefaults.standardUserDefaults()
+
         
         var oldDate = defaults.objectForKey("oldDate") as NSDate
-        println(oldDate.timeIntervalSinceNow)
         
         if (Int(oldDate.timeIntervalSinceNow)<delayBeforeErase)
         {
             billField.text="0"
         }
-        calculateTip()
+        else
+        {
+            var billAmount=defaults.integerForKey("billAmount")
+            billField.text=String(billAmount)
+
+        }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        var currentDate = NSDate()
-       
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func sayHello(personName: String) -> String {
-        let greeting = "Hello, " + personName + "!"
-        return greeting
-    }
-
-    
-    
     func calculateTip(){
-        var defaults = NSUserDefaults.standardUserDefaults()
+        var tipValues=getTipPredefinedValues()
         
-        var tipOne = defaults.integerForKey("tipOne")
-        var tipTwo = defaults.integerForKey("tipTwo")
-        var tipThree = defaults.integerForKey("tipThree")
-        
-        var tipPercentages = [tipOne,tipTwo,tipThree]
+        var tipPercentages = [tipValues.0,tipValues.1,tipValues.2]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = (billField.text as NSString).floatValue
@@ -102,10 +90,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
-        var currentDate = NSDate()
-
-        var defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(currentDate, forKey: "oldDate")
         calculateTip()
     }
 
@@ -114,10 +98,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onBillAmountChange(sender: AnyObject) {
-        var defaults = NSUserDefaults.standardUserDefaults()
-        
         defaults.setInteger((billField.text as NSString).integerValue, forKey: "billAmount")
-        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -127,7 +108,13 @@ class ViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
+        var currentDate = NSDate()
+        defaults.setObject(currentDate, forKey: "oldDate")
         println("view did disappear")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
 }
