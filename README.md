@@ -20,3 +20,7 @@ Walkthrough of all user stories:
 
 
 
+![alt tag](https://github.com/manask88/tips/blob/master/Screenshot%202015-01-19%2023.27.21.png)
+
+*LiceCap didn't work on my system. For that reason, I took screenshots of all the screees of my app.
+
