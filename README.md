@@ -17,3 +17,6 @@ Notes:
 I spent some time improving the design, similarly to the example given in the optional section. I spent some time refactoring the code to make it DRY. I used tuples. I used inheritance and created functions.
 
 Walkthrough of all user stories:
+
+
+

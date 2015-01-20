@@ -50,12 +50,12 @@
                   symbolName = "tips.ViewController.__deallocating_deinit"
                   moduleName = "tips"
                   urlString = "file:///Users/manuel/Desktop/tips/tips/ViewController.swift"
-                  timestampString = "443430250.587305"
+                  timestampString = "443431143.469114"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "19">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -64,14 +64,24 @@
                   symbolName = "@objc tips.ViewController.__ivar_destroyer"
                   moduleName = "tips"
                   urlString = "file:///Users/manuel/Desktop/tips/tips/ViewController.swift"
-                  timestampString = "443430250.587466"
+                  timestampString = "443431143.469263"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = ""
+            moduleName = "">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
