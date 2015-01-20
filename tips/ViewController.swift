@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: BaseViewController {
     
     let delayBeforeErase=(-600)
     
@@ -23,39 +22,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipControl: UISegmentedControl!
     
-    
-    var defaults: NSUserDefaults!
-   
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        println("viewWillAppear")
-      
-        var tipValues=getTipPredefinedValues()
-        
-        tipControl.setTitle(String(tipValues.0)+"%", forSegmentAtIndex: 0)
-        tipControl.setTitle(String(tipValues.1)+"%", forSegmentAtIndex: 1)
-        tipControl.setTitle(String(tipValues.2)+"%", forSegmentAtIndex: 2)
-        
-        calculateTip()
-        
-    }
-    
-    func getTipPredefinedValues() -> (tipOne:Int, tipTwo:Int, tipThree:Int) {
-        var tipOne = defaults.integerForKey("tipOne")
-        var tipTwo = defaults.integerForKey("tipTwo")
-        var tipThree = defaults.integerForKey("tipThree")
-
-        return (tipOne, tipTwo,tipThree)
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println("viewDidLoad")
-
-        defaults = NSUserDefaults.standardUserDefaults()
-
         
         var oldDate = defaults.objectForKey("oldDate") as NSDate
         
@@ -71,6 +39,26 @@ class ViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var tipValues=getTipPredefinedValues()
+        
+        tipControl.setTitle(String(tipValues.0)+"%", forSegmentAtIndex: 0)
+        tipControl.setTitle(String(tipValues.1)+"%", forSegmentAtIndex: 1)
+        tipControl.setTitle(String(tipValues.2)+"%", forSegmentAtIndex: 2)
+        
+        calculateTip()
+        
+    }
+    
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        var currentDate = NSDate()
+        defaults.setObject(currentDate, forKey: "oldDate")
+    }
+    
     func calculateTip(){
         var tipValues=getTipPredefinedValues()
         
@@ -92,29 +80,10 @@ class ViewController: UIViewController {
     @IBAction func onEditingChanged(sender: AnyObject) {
         calculateTip()
     }
-
-    @IBAction func onTap(sender: AnyObject) {
-        view.endEditing(true)
-    }
+    
     
     @IBAction func onBillAmountChange(sender: AnyObject) {
         defaults.setInteger((billField.text as NSString).integerValue, forKey: "billAmount")
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        println("view will disappear")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        var currentDate = NSDate()
-        defaults.setObject(currentDate, forKey: "oldDate")
-        println("view did disappear")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
 }

@@ -8,47 +8,25 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: BaseViewController {
 
     @IBOutlet weak var tipOne: UITextField!
-    
     @IBOutlet weak var tipTwo: UITextField!
-    
     @IBOutlet weak var tipThree: UITextField!
+    
     @IBOutlet var viewSettings: UIView!
 
-    var defaults: NSUserDefaults!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var tipValues=getTipPredefinedValues()
         
-        defaults = NSUserDefaults.standardUserDefaults()
+        tipOne.text = String(tipValues.0)
+        tipTwo.text = String(tipValues.1)
+        tipThree.text = String(tipValues.2)
         
-        tipOne.text = String(defaults.integerForKey("tipOne"))
-        tipTwo.text = String(defaults.integerForKey("tipTwo"))
-        tipThree.text = String(defaults.integerForKey("tipThree"))
-
-        
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-
-    @IBAction func onTap(sender: AnyObject) {
-        view.endEditing(true)
-
-    }
-    
-    @IBAction func onSave(sender: AnyObject) {
-    
-    }
-    
-
+  
     @IBAction func onDone(sender: AnyObject) {
         
         defaults.setInteger((tipOne.text as NSString).integerValue, forKey: "tipOne")
@@ -57,21 +35,6 @@ class SettingsViewController: UIViewController {
         defaults.synchronize()
         
         performSegueWithIdentifier("mainScreen", sender: self)
-        println("saving")
     }
     
-   
-    
- 
-    /*
-    // MARK: - Navigation
-
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

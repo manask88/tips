@@ -19,11 +19,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tips/SettingsViewController.swift"
-            timestampString = "443398429.025074"
+            timestampString = "443411998.963966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "SettingsViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -50,7 +50,7 @@
                   symbolName = "tips.ViewController.__deallocating_deinit"
                   moduleName = "tips"
                   urlString = "file:///Users/manuel/Desktop/tips/tips/ViewController.swift"
-                  timestampString = "443411177.286458"
+                  timestampString = "443412038.286492"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
@@ -64,12 +64,12 @@
                   symbolName = "@objc tips.ViewController.__ivar_destroyer"
                   moduleName = "tips"
                   urlString = "file:///Users/manuel/Desktop/tips/tips/ViewController.swift"
-                  timestampString = "443411177.286599"
+                  timestampString = "443412038.286707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
          </BreakpointContent>
