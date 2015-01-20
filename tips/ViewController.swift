@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    let delayBeforeErase=(-6)
+    
+    
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
 
@@ -38,6 +41,14 @@ class ViewController: UIViewController {
         tipControl.setTitle(String(tipThree)+"%", forSegmentAtIndex: 2)
         
         
+        
+        var oldDate = defaults.objectForKey("oldDate") as NSDate
+        println(oldDate.timeIntervalSinceNow)
+        
+        if (Int(oldDate.timeIntervalSinceNow)<delayBeforeErase)
+        {
+            billField.text="0"
+        }
         calculateTip()
     }
 
@@ -47,7 +58,7 @@ class ViewController: UIViewController {
         
         
         var currentDate = NSDate()
-        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,7 +97,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
-          calculateTip()
+        var currentDate = NSDate()
+
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(currentDate, forKey: "oldDate")
+        calculateTip()
     }
 
     @IBAction func onTap(sender: AnyObject) {
@@ -98,6 +113,16 @@ class ViewController: UIViewController {
         
         defaults.setInteger((billField.text as NSString).integerValue, forKey: "billAmount")
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        println("view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        println("view did disappear")
     }
     
 }
